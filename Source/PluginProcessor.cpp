@@ -22,12 +22,9 @@ VocalEQAudioProcessor::VocalEQAudioProcessor()
                        )
 #endif
 {
-    addParameter (highPassFilter = new juce::AudioParameterInt (
-        "highPassFilter", "High pass filter", 20, 200, 20));
-    addParameter (trebleBoost = new juce::AudioParameterFloat (
-        "trebleBoost", "Treble boost", 0.0f, 1.0f, 0.0f));
-    addParameter (rollOff = new juce::AudioParameterFloat (
-        "rollOff", "Roll off", 0.0f, 1.0f, 0.0f));
+    addParameter (highPassFilter = new juce::AudioParameterInt ({"highPassFilter", 1}, "High pass filter", 20, 200, 20));
+    addParameter (trebleBoost = new juce::AudioParameterFloat ({"trebleBoost", 1}, "Treble boost", 0.0f, 1.0f, 0.0f));
+    addParameter (rollOff = new juce::AudioParameterFloat ({"rollOff", 1}, "Roll off", 0.0f, 1.0f, 0.0f));
 }
 
 VocalEQAudioProcessor::~VocalEQAudioProcessor()
